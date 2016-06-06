@@ -1,1 +1,35 @@
-<section class="section-contact"><h2 id="Details">Contact Details</h2><hr class="bar"/><div class="social-links"><a href="https://www.facebook.com/"><div class="glyph-icon flaticon-facebook3"></div></a><a href="https://ie.linkedin.com"><div class="glyph-icon flaticon-linkedin"></div></a><a href="https://github.com/bawn92"><div class="glyph-icon flaticon-github"></div></a><a href="https://www.youtube.com"><div class="glyph-icon flaticon-youtube31"></div></a></div><hr class="bar"/><a href="mailto:example@gmail.com" class="biglink">example@gmail.com</a></section>
+
+<!-- Contact Start -->
+
+<section id="{{ page.section-type }}" class="container content-section text-center">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+      {{ page.content | markdownify }}
+
+      {% if site.email %}
+        {% if site.email contains '@' %}
+          {% assign newemail = site.email | split: '@' %}
+            <p>
+            <script>
+              function join_at_email(user, domain){
+              return (user && domain)?(user + "@" + domain):"";
+              }
+              document.write('<a href="mailto:'
+              + join_at_email( "{{ newemail[0] }}", "{{ newemail[1] }}" )
+              + '">'
+              + join_at_email( "{{ newemail[0] }}", "{{ newemail[1] }}" )
+              + '</a>'
+              );
+              </script>
+            </p>
+        {% else %}
+          <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        {% endif %}
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact End -->
