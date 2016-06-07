@@ -3,4 +3,4 @@ layout: post
 title: Quares
 extern: https://itunes.apple.com/app/quares/id455728856?mt=8
 ---
-<img src="./images/fulls/quares_full.png" class="fit image"> Puzzle brain training game for iOS (UIKIT) and Android. Using GameCenter and multi-ads system.
+<img src="/images/fulls/quares_full.png" class="fit image"> Puzzle brain training game for iOS (UIKIT) and Android. Using GameCenter and multi-ads system.
