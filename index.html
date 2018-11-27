@@ -6,7 +6,7 @@ layout: default
 <!-- Main -->
 <div id="main">
     <section>
-		<a href="#portfolio">{Portfolio}</a>  |  <a href="#experience">{Experience}</a> | <a href="#education">{Education}</a> | <a href="/">
+		<a href="#myportfolio">{My Apps}</a>  | <a href="#portfolio">{Apps I have worked in}</a> |  <a href="#experience">{Experience}</a> | <a href="#education">{Education}</a> | <a href="/">
 		<hr>
         <!-- begin Summary -->
         <section class="content-section">
@@ -20,9 +20,9 @@ layout: default
             <!--<p class="resume-item-copy"></p>-->
             <ul class="resume-item-list">
               <li>6 years of experience as iOS Developer (Since iOS 4-5)</li>
-			  <li>5 years of experience as Backend Developer (ASP.net)</li>
+			  <li>5 years of experience as Backend Developer</li>
               <li>3 years of experience as web FrontEnd developer. (HTML+Javascript)</li>
-			  <li>6 years working in Agile projects with Scrum/Kanban/CI (JIRA).</li>
+			  <li>6 years working in Agile projects with Scrum/Kanban (AGILE) .</li>
 			  <li>11 years total as Software Developer</li>
             </ul>
 			<hr>
@@ -253,9 +253,9 @@ Final Degree Project: User-focused web application to create self-published dyna
     </section>
     <section>
 		<a name="portfolio"></a>
-		<h2>Portfolio</h2>
+		<h2>Apps I have worked in</h2>
         <div class="row">
-            {% for post in site.posts offset:0 %}
+            {% for post in site.posts offset:0 limit:3 %}
 
                 <article class="{% cycle '6u', '6u$' %} 12u(small)">
                     <header>
@@ -274,4 +274,28 @@ Final Degree Project: User-focused web application to create self-published dyna
             {% endfor %}
         </div>
     </section>
+    <section>
+		<a name="myportfolio"></a>
+		<h2>My Apps</h2>
+        <div class="row">
+            {% for post in site.posts offset:3 %}
+
+                <article class="{% cycle '6u', '6u$' %} 12u(small)">
+                    <header>
+                        <h2><a href="{{ post.extern }}">{{ post.title }}</a></h2>
+                    </header>
+                    <section>
+                        {{ post.excerpt }}
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <!--<li><a href="{{ post.url }}" class="button">Read More</a></li>-->
+                        </ul>
+                    </footer>
+                </article>
+
+            {% endfor %}
+        </div>
+    </section>
+    
 </div>
