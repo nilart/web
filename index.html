@@ -255,7 +255,7 @@ Final Degree Project: User-focused web application to create self-published dyna
 		<a name="portfolio"></a>
 		<h2>Apps I have worked in</h2>
         <div class="row">
-            {% for post in site.posts offset:0 limit:3 %}
+            {% for post in site.posts offset:0 %}
 
                 <article class="{% cycle '6u', '6u$' %} 12u(small)">
                     <header>
@@ -266,7 +266,6 @@ Final Degree Project: User-focused web application to create self-published dyna
                     </section>
                     <footer>
                         <ul class="actions">
-                            <!--<li><a href="{{ post.url }}" class="button">Read More</a></li>-->
                         </ul>
                     </footer>
                 </article>
@@ -274,7 +273,7 @@ Final Degree Project: User-focused web application to create self-published dyna
             {% endfor %}
         </div>
     </section>
-    <section>
+    <!-- <section>
 		<a name="myportfolio"></a>
 		<h2>My Apps</h2>
         <div class="row">
@@ -289,13 +288,13 @@ Final Degree Project: User-focused web application to create self-published dyna
                     </section>
                     <footer>
                         <ul class="actions">
-                            <!--<li><a href="{{ post.url }}" class="button">Read More</a></li>-->
+
                         </ul>
                     </footer>
                 </article>
 
             {% endfor %}
         </div>
-    </section>
+    </section> -->
     
 </div>
