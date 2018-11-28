@@ -1,0 +1,7 @@
+---
+layout: post
+title: Shootr
+extern: https://itunes.apple.com/es/app/shootr/id985145850?mt=8
+---
+<img src="/images/fulls/shootr.jpg" class="fit image">
+Social app with real-time chats to connect people with similar likes.

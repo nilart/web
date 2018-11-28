@@ -1,0 +1,7 @@
+---
+layout: post
+title: PlayMGM
+extern: https://itunes.apple.com/ca/app/playmgm/id1083947754?mt=8
+---
+<img src="/images/fulls/mgmsportsbook.png" class="fit image">
+Main casino app of the MGM Resorts Casino in Las Vegas.

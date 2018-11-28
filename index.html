@@ -255,7 +255,7 @@ Final Degree Project: User-focused web application to create self-published dyna
 		<a name="portfolio"></a>
 		<h2>Apps I have worked in</h2>
         <div class="row">
-            {% for post in site.posts offset:0 %}
+            {% for post in site.posts offset:0 limit:6 %}
 
                 <article class="{% cycle '6u', '6u$' %} 12u(small)">
                     <header>
@@ -273,11 +273,11 @@ Final Degree Project: User-focused web application to create self-published dyna
             {% endfor %}
         </div>
     </section>
-    <!-- <section>
+    <section>
 		<a name="myportfolio"></a>
 		<h2>My Apps</h2>
         <div class="row">
-            {% for post in site.posts offset:3 %}
+            {% for post in site.posts offset:6 %}
 
                 <article class="{% cycle '6u', '6u$' %} 12u(small)">
                     <header>
@@ -288,13 +288,13 @@ Final Degree Project: User-focused web application to create self-published dyna
                     </section>
                     <footer>
                         <ul class="actions">
-
+  
                         </ul>
                     </footer>
                 </article>
 
             {% endfor %}
         </div>
-    </section> -->
+    </section>
     
 </div>
