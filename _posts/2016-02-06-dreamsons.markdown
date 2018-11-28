@@ -1,7 +1,6 @@
 ---
 layout: post
 title: The Dreamsons
-date: 2015-02-06T14:37:44.000Z
 extern: http://www.thedreamsons.com
 ---
 
