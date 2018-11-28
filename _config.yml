@@ -16,6 +16,7 @@ github_username:      nilart  # Replace this with your GitHub username
 linkedin_username:    gzafra  # Replace this with your LinkedIn username
 facebook_username:      # Replace this with your Facebook username
 skype_username:      # Replace this with your Dribbble username
+stackoverflow_username 992934/gzafra
 
 # Build settings
 markdown: kramdown

@@ -24,7 +24,7 @@
 
       <header id="header">
           <a href="#" class="image avatar"><img src="/images/me.jpg" alt="" /></a>
-          <h1><strong>Guillermo Zafra</strong>, iOS Developer <br /> Available?<br />
+          <h1><strong>Guillermo Zafra</strong> <br /> iOS Engineer <br />
           </h1>
 		  <br />
           <div class="resume-item">
@@ -34,6 +34,14 @@
 		  
 		
           <ul class="icons">
+              {% if site.stackoverflow_username %}
+              <li>
+                <a href="https://stackoverflow.com/users//{{ site.stackoverflow_username }}" class="icon fa-stack-overflow">
+                  <span class="label">StackOverflow</span>
+                </a>
+              </li>
+              {% endif %}
+			  
             {% if site.github_username %}
             <li>
               <a href="https://github.com/{{ site.github_username }}" class="icon fa-github">
