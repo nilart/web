@@ -1,121 +1,165 @@
 <!DOCTYPE html>
 <html>
-  	<head>
-  		<title>Guillermo Zafra - iOS Developer - Contract</title>
-  		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  		<meta name="description" content="" />
-  		<meta name="keywords" content="" />
-  		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-  		<script src="/js/jquery.min.js"></script>
-  		<script src="/js/jquery.poptrox.min.js"></script>
-  		<script src="/js/skel.min.js"></script>
-  		<script src="/js/init.js"></script>
-  		<noscript>
-  			<link rel="stylesheet" href="/css/skel.css" />
-  			<link rel="stylesheet" href="/css/style.css" />
-  			<link rel="stylesheet" href="/css/style-xlarge.css" />
-			
-  		</noscript>
-  		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  	</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Guillermo Zafra - iOS Developer - Contract</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
-	<body id="top">
+    <!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
 
-      <header id="header">
-          <a href="#" class="image avatar"><img src="/images/me.jpg" alt="" /></a>
-          <h1><strong>Guillermo Zafra</strong> <br /> iOS Engineer <br />
-          </h1>
-		  <br />
-          <div class="resume-item">
-            <p class="resume-item-copy"><strong>Skype:</strong> <span class="reverse">pzomrelliug</span> <br />
-				<strong>Email:</strong> <span class="reverse">moc.arfazg@em</span> </p>
-          </div>
-		  
-		
-          <ul class="icons">
-              {% if site.stackoverflow_username %}
-              <li>
-                <a href="https://stackoverflow.com/users/{{ site.stackoverflow_username }}" class="icon fa-stack-overflow">
-                  <span class="label">StackOverflow</span>
-                </a>
-              </li>
-              {% endif %}
-			  
-            {% if site.github_username %}
-            <li>
-              <a href="https://github.com/{{ site.github_username }}" class="icon fa-github">
-                <span class="label">GitHub</span>
-              </a>
-            </li>
-            {% endif %}
+    <!-- Preload CSS files -->
+    <link rel="preload" as="style" href="/css/skel.css" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="/css/style-xlarge.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/css/skel.css" />
+      <link rel="stylesheet" href="/css/style.css" />
+      <link rel="stylesheet" href="/css/style-xlarge.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-            {% if site.twitter_username %}
-            <li>
-              <a href="https://twitter.com/{{ site.twitter_username }}" class="icon fa-twitter">
-                <span class="label">Twitter</span>
-              </a>
-            </li>
-            {% endif %}
+    <!-- Inline critical CSS for FOUC prevention and preloader styling -->
+    <style>
+      /* Hide page content initially */
+      body {
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+        background: #fff;
+      }
+      /* Preloader container */
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      /* Simple spinner */
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left-color: #09f;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
 
-            {% if site.linkedin_username %}
-            <li>
-              <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="icon fa-linkedin">
-                <span class="label">LinkedIn</span>
-              </a>
-            </li>
-            {% endif %}
+    <!-- Defer JS files -->
+    <script src="/js/jquery.min.js" defer></script>
+    <script src="/js/jquery.poptrox.min.js" defer></script>
+    <script src="/js/skel.min.js" defer></script>
+    <script src="/js/init.js" defer></script>
+  </head>
 
-            {% if site.google_plus_username %}
-            <li>
-              <a href="https://plus.google.com/{{ site.google_plus_username }}" class="icon fa-google-plus">
-                <span class="label">Google+</span>
-              </a>
-            </li>
-            {% endif %}
+  <body id="top">
+    <!-- Preloader element -->
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
 
-            {% if site.facebook_username %}
-            <li>
-              <a href="https://www.facebook.com/{{ site.facebook_username }}" class="icon fa-facebook">
-                <span class="label">Facebook</span>
-              </a>
-            </li>
-            {% endif %}
+    <header id="header">
+      <a href="#" class="image avatar"><img src="/images/me.jpg" alt="" /></a>
+      <h1><strong>Guillermo Zafra</strong> <br /> iOS Engineer <br /></h1>
+      <br />
+      <div class="resume-item">
+        <p class="resume-item-copy">
+          <strong>Skype:</strong> <span class="reverse">pzomrelliug</span> <br />
+          <strong>Email:</strong> <span class="reverse">moc.arfazg@em</span>
+        </p>
+      </div>
+      <ul class="icons">
+        {% if site.stackoverflow_username %}
+          <li>
+            <a href="https://stackoverflow.com/users/{{ site.stackoverflow_username }}" class="icon fa-stack-overflow">
+              <span class="label">StackOverflow</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if site.github_username %}
+          <li>
+            <a href="https://github.com/{{ site.github_username }}" class="icon fa-github">
+              <span class="label">GitHub</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if site.twitter_username %}
+          <li>
+            <a href="https://twitter.com/{{ site.twitter_username }}" class="icon fa-twitter">
+              <span class="label">Twitter</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if site.linkedin_username %}
+          <li>
+            <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="icon fa-linkedin">
+              <span class="label">LinkedIn</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if site.google_plus_username %}
+          <li>
+            <a href="https://plus.google.com/{{ site.google_plus_username }}" class="icon fa-google-plus">
+              <span class="label">Google+</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if site.facebook_username %}
+          <li>
+            <a href="https://www.facebook.com/{{ site.facebook_username }}" class="icon fa-facebook">
+              <span class="label">Facebook</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if site.skype_username %}
+          <li>
+            <a href="#" class="icon fa-dribbble">
+              <span class="label">Skype</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if site.email %}
+          <li>
+            <a href="me [at] gzafra.com" rel="nofollow"
+               onclick="this.href='mailto:' + 'me' + '@' + 'gzafra.com'" class="icon fa-envelope-o">
+              <span class="label">Email</span>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </header>
 
-            {% if site.skype_username %}
-            <li>
-              <a href="#" class="icon fa-dribbble">
-                <span class="label">Skype</span>
-              </a>
-            </li>
-            {% endif %}
+    {{ content }}
 
-            {% if site.email %}
-            <li>
-				<a href="me [at] gzafra.com"
-				   rel="nofollow"
-				   onclick="this.href='mailto:' + 'me' + '@' + 'gzafra.com'" class="icon fa-envelope-o"><span class="label">Email</span></a>
-             
-            </li>
-            {% endif %}
-          </ul>
-      </header>
+    <!-- Footer -->
+    <footer id="footer">
+      <hr>
+      <ul class="copyright">
+        <li>&copy; 2016 Creative Commons Attribution 3.0</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+        <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+      </ul>
+    </footer>
 
-
-        {{ content }}
-		
-
-        <!-- Footer -->
-        <footer id="footer">
-            <hr>
-
-            <ul class="copyright">
-                <li>&copy; 2016 Creative Commons Attribution 3.0</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
-                <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
-            </ul>
-        </footer>
-
-	</body>
+    <!-- Remove preloader and fade in page when DOM is ready -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var preloader = document.getElementById("preloader");
+        if (preloader) { preloader.style.display = "none"; }
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
 </html>
